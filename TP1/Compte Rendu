@@ -1,0 +1,154 @@
+TP1
+
+Exercice 1 :
+
+int *p;            // Déclaration d'un Pointeur P en entier
+int *a, b;         // Déclaration d'un Pointeur A et d'une variable B en entier
+int *p[10];        // Déclaration d'un Tableau de Pointeur de taille 10 
+int (*p)[10];      // Déclaration d'un Pointeur P sur un Tableau de 10
+char *p();         // Déclaration d'une fonction qui retourne un Pointeur en car
+char (*p)();       // Déclaration d'un Pointeur sur une fonction retournant un char
+int (*p)(char *a); // Déclaration d'un pointeur sur une fonction prenant un pointeur sur un caractère en paramètre retournant un caractère
+
+Exercice 2 :
+
+Programme )
+
+#include <stdio.h>
+int main(){
+    int a, b;
+    int *p,*q;
+    a=12;
+    b=2+a/4 ;
+    p=&a ;
+    printf("*p = %d\t a = %d\n",*p,a);
+    *p=*p + 5 ;
+    printf("*p = %d\t a = %d\n",*p,a);
+    a= a-7;
+    printf("*p = %d\t a = %d\n",*p,a);
+    q=p ;
+    p=&b ;
+    printf("*p = %d\t *q = %d\n",*p,*q);
+    printf("a = %d\t b = %d\n",a,b);
+    q=p ;
+    a=a+a ;
+    printf("*p = %d\t *q = %d\n",*p,*q);
+    printf("a = %d\t b = %d\n",a,b);
+    return 0;
+}
+
+Trace d'exécution )
+
+*p = 12  a = 12
+*p = 17  a = 17
+*p = 10  a = 10
+*p =  5 *q = 10
+ a = 10  b =  5
+*p =  5 *q =  5
+ a = 20  b =  5
+ 
+Exercice 3 :
+ 
+Ce programme permet de renvoyer les adresses des lettres 'a' à 'q'.
+
+a & b -> Variables globale ( visible de partout ) 
+d     -> Pointeur en int ; c -> Variable en int
+p & q -> Pointeurs en int
+e & f -> Variables en int
+q -> Allocation mémoire pour un entier
+
+Affichage )
+    \t -> tabulation
+    %p -> Mod
+    \n -> Saut de ligne
+    &a -> Bitwise a And... ( ici q ).
+    
+Exercice 4 :
+
+char Chaine[] réserve 5 emplacements de mémoire, 4 pour les caractères + 1 pour
+savoir quand s'arrêter. 
+Donc c'est un tableau de 5 caractères avec "abcd et \0".
+
+Taille de "a"        :	2 
+Taille de char       :	1 //Taille du caractère en Octet
+Taille de int        :	4
+Taille de short      :	2
+Taille de long       :	8
+Taille de float      :	4
+Taille de double     :	8
+Taille de 1          :	4
+Taille de 'a'        :	4 //Il a convertit le char en int
+Taille de c          :	1
+Taille de '\n'       :	4
+Taille de chaine     :	5 //A = 4 + \0 = 1
+Longueur de la chaine:	4
+
+Exercice 5 :
+
+#include <stdlib.h> -> man malloc
+#include <assert.h> -> man assert
+
+*z[0]=2		*z[1]=2
+
+Programme ) 
+
+#include <stdio.h>
+#include <stdlib.h>             /* à compléter pour malloc() et free */
+#include <assert.hq>             /* à compléter pour assert() */
+int main(){
+         int x=1;  //Simple variable en entier
+         int * y;  // Pointeur en int
+         int ** z; // Tableau de pointeur sur des entiers
+         y = &x ;  /* initialisation du pointeur y */
+         z = (int**) malloc(2*sizeof(int*));
+         assert(z != NULL); // Vérifie si le malloc a bien alloué de la mémoire à z
+         z[0] = y; // y contient l'adresse de x
+         x = 2; 
+         z[1] = y; // y contient l'adresse de x
+         printf("*z[0]=%d\t\t*z[1]=%d\n", *z[0], *z[1]);
+         free (z); // Libère la mémoire de z
+         return 0;
+}
+
+Exercice 6 :
+
+Programme )
+
+#include <stdio.h>
+int val1, val2;
+int temp;
+
+void permut(int val1, int val2, int temp){
+    val1=5;
+    val2=10;
+    
+    printf("Avant Permutation : \n",val1);
+    printf("Valeur1 : %d\n",val1);
+    printf("Valeur2 : %d\n",val2);
+    
+    temp = val1;
+    val1 = val2;
+    val2 = temp;
+    
+    printf("Après Permutation : \n",val1);
+    printf("Valeur1 : %d\n",val1);
+    printf("Valeur2 : %d\n",val2);
+}
+int main(){
+    permut(&val1, &val2, &temp);
+    return 0;
+}
+
+Exercice 7 :
+
+
+
+
+
+
+
+
+
+
+
+

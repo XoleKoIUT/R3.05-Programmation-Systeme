@@ -1,0 +1,7 @@
+int *p;            // Déclaration d'un Pointeur P en entier
+int *a, b;         // Déclaration d'un Pointeur A et d'une variable B en entier
+int *p[10];        // Déclaration d'un Tableau de Pointeur de taille 10 
+int (*p)[10];      // Déclaration d'un Pointeur P sur un Tableau de 10
+char *p();         // Déclaration d'une fonction qui retourne un Pointeur en car
+char (*p)();       // Déclaration d'un Pointeur sur une fonction retournant un char
+int (*p)(char *a); // Déclaration d'un pointeur sur une fonction prenant un pointeur sur un caractère en paramètre retournant un caractère
