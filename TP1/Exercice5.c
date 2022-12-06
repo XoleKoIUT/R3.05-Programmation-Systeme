@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>             /* à compléter pour malloc() et free */
-#include <assert.hq>             /* à compléter pour assert() */
+#include <assert.h>           /* à compléter pour assert() */
 int main(){
-         int x=1; //Simple variable en entier
-         int * y; // Pointeur en int
+         int x =1; //Simple variable en entier
+         int *  y; // Pointeur en int
          int ** z; // Tableau de pointeur sur des entiers
          y = &x ;   /* initialisation du pointeur y */
          z = (int**) malloc(2*sizeof(int*));

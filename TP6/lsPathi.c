@@ -17,17 +17,17 @@ ls --help*/
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
-#include <sys/wait.h>
+#include <sys/stat.h>
 #include <unistd.h>
 
 int main(int argc, char *argv[])
 {
-    char *s = getenv("PATH"); //on récupère la variable PATH du shell
-    char *tpath[60];
-    int i, status, ret;
-    char *chemin;
+    char  *s = getenv("PATH"); //on récupère la variable PATH du shell
+    char  *tpath[60];
+    int   i, status, ret;
+    char  *chemin;
     pid_t pid;
-    char opt[20], tiretopt[50];
+    char  opt[20], tiretopt[50];
 
     if (s == NULL)
     {
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     //on traite les autres cas; LE POINT VIRGULE EST IMPORTANT (instruction vide))
 
     //affichage des différents chemins
+
     i = 0;
     while (tpath[i] != NULL)
     {
